@@ -1,4 +1,4 @@
-import { getMongodbQuestion } from "../pages/api/mongo.js";
+import { getMongodbQuestion } from "../pages/api/mongodb.js";
 
 const questions = [
   getMongodbQuestion

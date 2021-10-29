@@ -1,5 +1,5 @@
 import Head from "next/head";
-import clientPromise from "./api/mongo.js";
+//import clientPromise from "./api/mongo.js";
 
 export default function Home({}) {
   return (
