@@ -4,15 +4,21 @@ import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 
 const AnswerSheet = ({ Data }) => {
-   const [answer, setAnswer] = useState();
-   const [showtick, setshowtick] = useState(false);
+  const [answer, setAnswer] = useState();
+  const [showtick, setshowtick] = useState(false);
+  // useEffect(() => {  (a) => {
+  //   // if (a === "sam") return setshowtick(true);
+  //   alert(a);
+  // };
 
-  function CheckEachAnswer(answer) {
-   if (setAnswer === "sam") return setshowtick(true);}
-       
+  //   },
+  //  [setAnswer],)
 
-   
-  
+  function checkAnswer(answer, correctAnswer) {
+    if (answer === correctAnswer.answers) {
+      setshowtick(true);
+    }
+  }
 
   return (
     <div className="w-full max-w-screen-lg my-10">
@@ -34,8 +40,9 @@ const AnswerSheet = ({ Data }) => {
                 />
                 <button
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
-                  type="button"
-                  onClick={() => CheckEachAnswer((answer) => setAnswer)}
+                  onClick={(answer) => {
+                     setshowtick(true) ;
+                  }}
                 >
                   Submit
                 </button>
@@ -51,5 +58,5 @@ const AnswerSheet = ({ Data }) => {
       </form>
     </div>
   );
-        }
+};
 export default AnswerSheet;
