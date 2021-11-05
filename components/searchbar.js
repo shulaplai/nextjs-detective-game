@@ -1,6 +1,6 @@
 const SearchBar = () => {
   return (
-    <div className=" pt-56 p-20	">
+    <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
         <input
           className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none"
@@ -18,3 +18,4 @@ const SearchBar = () => {
     </div>
   );
 };
+export default SearchBar;
