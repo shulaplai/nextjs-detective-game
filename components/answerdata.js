@@ -1,22 +1,23 @@
-export const answerData = [
+export const AnswerData = [
   {
-    question: "",
-    answers: "",
+    question: "Who is the killer",
+    answers: "Sam",
   },
   {
-    question: "",
-    answers: "",
+    question: "Who is the killer",
+    answers: "Sam",
   },
   {
-    question: "",
-    answers: "",
+    question: "Who is the killer",
+    answers: "Sam",
   },
   {
-    question: "",
-    answers: "",
+    question: "Who is the killer",
+    answers: "Sam",
   },
   {
-    question: "",
-    answers: "",
+    question: "Who is the killer",
+    answers: "Sam",
   },
 ];
+export default AnswerData
