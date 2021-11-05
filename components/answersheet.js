@@ -1,27 +1,30 @@
 import AnswerData from "./answerdata.js";
 import React, { useEffect, useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
+import { useForm } from "react-hook-form";
 
 const AnswerSheet = ({ Data }) => {
-  const [filter, setFilter] = useState("");
-
-  function CheckAnswer(value) {
-    if ( value === "sam")
-      return (
-        <div>
-          <TiTickOutline />
-        </div>
-      );
-    else return <h1>wrong</h1>;
-  }
+ const { register, handleSubmit } = useForm();
+ const onSubmit = (data) => {
+   alert(JSON.stringify(data));
+ };
+  // function CheckAnswer(value) {
+  //   if ( value === "sam")
+  //     return (
+  //       <>
+  //         <TiTickOutline />
+  //       </>
+  //     );
+  //   else return <p>wrong</p>;
+  // }
 
   return (
-    <div className="w-full max-w-screen-lg		">
+    <div className="w-full max-w-screen-lg">
       <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 mb-4">
         <div className="mb-4">
           {AnswerData.map((item, index) => {
             return (
-              <div>
+              <div onSubmit={handleSubmit(onSubmit)}>
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
                   for="question"
@@ -33,8 +36,7 @@ const AnswerSheet = ({ Data }) => {
                   id="answer"
                   type="text"
                   placeholder="Answer"
-                 onClick={() => CheckAnswer()}
-
+              
                   
                 />
                 <button
