@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalBody from "react-bootstrap/ModalBody";
-import Modal from "react-bootstrap/Modal";
 
 const HelpIcon = () => {
   const [show, setShow] = useState(false);
