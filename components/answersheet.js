@@ -4,31 +4,24 @@ import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 
 const AnswerSheet = ({ Data }) => {
- const { register, handleSubmit } = useForm();
- const onSubmit = (data) => {
-   alert(JSON.stringify(data));
- };
-  // function CheckAnswer(value) {
-  //   if ( value === "sam")
-  //     return (
-  //       <>
-  //         <TiTickOutline />
-  //       </>
-  //     );
-  //   else return <p>wrong</p>;
-  // }
+   const [answer, setAnswer] = useState();
+   const [showtick, setshowtick] = useState(false);
+
+  function CheckEachAnswer(answer) {
+   if (setAnswer === "sam") return setshowtick(true);}
+       
+
+   
+  
 
   return (
-    <div className="w-full max-w-screen-lg">
-      <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 mb-4">
+    <div className="w-full max-w-screen-lg my-10">
+      <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 	">
         <div className="mb-4">
           {AnswerData.map((item, index) => {
             return (
-              <div onSubmit={handleSubmit(onSubmit)}>
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  for="question"
-                >
+              <div key={index}>
+                <label className="block text-gray-700 text-sm font-bold mb-2">
                   Q{index + 1} {item.question}
                 </label>
                 <input
@@ -36,15 +29,21 @@ const AnswerSheet = ({ Data }) => {
                   id="answer"
                   type="text"
                   placeholder="Answer"
-              
-                  
+                  value={answer}
+                  onClick={() => setAnswer((answer) => answer)}
                 />
                 <button
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
                   type="button"
+                  onClick={() => CheckEachAnswer((answer) => setAnswer)}
                 >
                   Submit
                 </button>
+                {showtick ? (
+                  <div>
+                    <TiTickOutline />
+                  </div>
+                ) : null}
               </div>
             );
           })}
@@ -52,5 +51,5 @@ const AnswerSheet = ({ Data }) => {
       </form>
     </div>
   );
-};
+        }
 export default AnswerSheet;
