@@ -15,7 +15,8 @@ const AnswerSheet = ({ Data }) => {
   //  [setAnswer],)
 
   function checkAnswer(answer, correctAnswer) {
-    if (answer === correctAnswer.answers) {
+    correctAnswer = AnswerData.index.answers;
+    if (answer === correctAnswer) {
       setshowtick(true);
     }
   }
@@ -40,8 +41,11 @@ const AnswerSheet = ({ Data }) => {
                 />
                 <button
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
-                  onClick={(answer) => {
-                     setshowtick(true) ;
+                  onClick={(answer, correctAnswer) => {
+                    correctAnswer = AnswerData.index.answers;
+                    if (answer === correctAnswer) {
+                      setshowtick(true);
+                    }
                   }}
                 >
                   Submit
