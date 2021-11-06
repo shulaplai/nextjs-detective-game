@@ -1,31 +1,31 @@
 export const AnswerData = [
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
   {
     question: "Who is the killer",
-    answers: "Sam",
+    answers: "sam",
   },
 ];
 export default AnswerData

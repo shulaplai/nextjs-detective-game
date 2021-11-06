@@ -3,8 +3,13 @@ import React, { useEffect, useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 
+function getanswer (answer) {
+                    let ans= answer.toString().toLowerCase()
+                    ans === item.answers ? (alert(a)) : null
+                     
+}
 const AnswerSheet = ({ Data }) => {
-  const [answer, setAnswer] = useState();
+  const [answer, setanswer] = useState();
   const [showtick, setshowtick] = useState(false);
   // useEffect(() => {  (a) => {
   //   // if (a === "sam") return setshowtick(true);
@@ -14,16 +19,14 @@ const AnswerSheet = ({ Data }) => {
   //   },
   //  [setAnswer],)
 
-  function checkAnswer(answer, correctAnswer) {
-    correctAnswer = AnswerData.index.answers;
-    if (answer === correctAnswer) {
-      setshowtick(true);
-    }
-  }
-
   return (
     <div className="w-full max-w-screen-lg my-10">
-      <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 	">
+      <form
+        className="bg-white shadow-md rounded px-36 pt-6 pb-8 	"
+        onSubmit={(answer) => {
+          alert(a);
+        }}
+      >
         <div className="mb-4">
           {AnswerData.map((item, index) => {
             return (
@@ -37,15 +40,14 @@ const AnswerSheet = ({ Data }) => {
                   type="text"
                   placeholder="Answer"
                   value={answer}
-                  onClick={() => setAnswer((answer) => answer)}
+                  onChange={() => setanswer((answer) => answer)}
                 />
                 <button
-                  className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
-                  onClick={(answer, correctAnswer) => {
-                    correctAnswer = AnswerData.index.answers;
-                    if (answer === correctAnswer) {
-                      setshowtick(true);
-                    }
+                  type="button"
+                  // className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
+                  onClick={(answer) => {
+                    let ans = answer.toString().toLowerCase();
+                    ans === item.answers ? alert(a) : null;
                   }}
                 >
                   Submit
