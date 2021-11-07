@@ -44,7 +44,7 @@ const AnswerSheet = ({ Data }) => {
                 />
                 <button
                   type="button"
-                  // className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
+                  className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
                   onClick={(answer) => {
                     let ans = answer.toString().toLowerCase();
                     ans === item.answers ? alert(a) : null;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import question from "./question.js";
 
 function App() {
-  const fruit = [
+  const searchBarData = [
     "apple",
     "banana",
     "orange",
