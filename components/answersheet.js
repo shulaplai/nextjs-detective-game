@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 
-function getanswer (answer) {
-                    let ans= answer.toString().toLowerCase()
-                    ans === item.answers ? (alert(a)) : null
-                     
+function getanswer(answer) {
+  answer === item.answers ? alert(a) : null;
 }
-const AnswerSheet = ({ Data }) => {
+const AnswerSheet = ({  }) => {
   const [answer, setanswer] = useState();
   const [showtick, setshowtick] = useState(false);
   // useEffect(() => {  (a) => {
@@ -23,9 +21,7 @@ const AnswerSheet = ({ Data }) => {
     <div className="w-full max-w-screen-lg my-10">
       <form
         className="bg-white shadow-md rounded px-36 pt-6 pb-8 	"
-        onSubmit={(answer) => {
-          alert(a);
-        }}
+        
       >
         <div className="mb-4">
           {AnswerData.map((item, index) => {
@@ -45,10 +41,11 @@ const AnswerSheet = ({ Data }) => {
                 <button
                   type="button"
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
-                  onClick={(answer) => {
-                    let ans = answer.toString().toLowerCase();
-                    ans === item.answers ? alert(a) : null;
-                  }}
+                  onClick={()=>
+                    {answer = item.answers
+                      ? setshowtick(true)
+                      : null}
+                  }
                 >
                   Submit
                 </button>
