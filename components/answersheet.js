@@ -2,27 +2,17 @@ import AnswerData from "./answerdata.js";
 import React, { useEffect, useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
-
-function getanswer(answer) {
-  answer === item.answers ? alert(a) : null;
-}
-const AnswerSheet = ({  }) => {
+//problem state cannot be mapped, the sheet shared one state. 
+// if cannot be solved , give up on map function
+const AnswerSheet = ({}) => {
   const [answer, setanswer] = useState();
-  const [showtick, setshowtick] = useState(false);
-  // useEffect(() => {  (a) => {
-  //   // if (a === "sam") return setshowtick(true);
-  //   alert(a);
-  // };
-
-  //   },
-  //  [setAnswer],)
+ const onChangeHandler = (event) => {
+   setanswer(event.target.value);
+ };
 
   return (
     <div className="w-full max-w-screen-lg my-10">
-      <form
-        className="bg-white shadow-md rounded px-36 pt-6 pb-8 	"
-        
-      >
+      <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 	">
         <div className="mb-4">
           {AnswerData.map((item, index) => {
             return (
@@ -36,24 +26,17 @@ const AnswerSheet = ({  }) => {
                   type="text"
                   placeholder="Answer"
                   value={answer}
-                  onChange={() => setanswer((answer) => answer)}
+                  onChange={onChangeHandler}
                 />
                 <button
                   type="button"
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
-                  onClick={()=>
-                    {answer = item.answers
-                      ? setshowtick(true)
-                      : null}
-                  }
+                  onClick={() => {
+                    answer === item.answers ? alert("Correct") : alert("Wrong");
+                  }}
                 >
                   Submit
                 </button>
-                {showtick ? (
-                  <div>
-                    <TiTickOutline />
-                  </div>
-                ) : null}
               </div>
             );
           })}
