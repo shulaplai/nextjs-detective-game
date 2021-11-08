@@ -4,12 +4,15 @@ import { TiTickOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 //problem state cannot be mapped, the sheet shared one state. 
 // if cannot be solved , give up on map function
-const AnswerSheet = ({}) => {
+const AnswerSheet = () => {
   const [answer, setanswer] = useState();
+  const [answer2, setanswer2] = useState();
+  const [answer3, setanswer3] = useState();
+  const [answer4, setanswer4] = useState();
+  const [answer5, setanswer5] = useState();
  const onChangeHandler = (event) => {
    setanswer(event.target.value);
  };
-
   return (
     <div className="w-full max-w-screen-lg my-10">
       <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 	">
@@ -32,7 +35,9 @@ const AnswerSheet = ({}) => {
                   type="button"
                   className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
                   onClick={() => {
-                    answer === item.answers ? alert("Correct") : alert("Wrong");
+                    answer === item.answers
+                      ? alert("AnswerData[1][question]")
+                      : alert("Wrong");
                   }}
                 >
                   Submit
