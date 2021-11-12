@@ -13,7 +13,8 @@ export default function Home({ question }) {
       <SearchBar></SearchBar>
       <Explain></Explain>
       {question.map((question) => (
-        <li>
+        <li>    
+
           <h2>{question.question}dsdfdsfdsf</h2>
           <h3>{question.answer}fsfesfesfes</h3>
         </li>
@@ -24,7 +25,7 @@ export default function Home({ question }) {
   );
 }
 
-export async function getStaticProps(req,res) {
+export async function getStaticProps() {
   const { db } = await connectToDatabase();
   const question = await db
     .collection("question")
@@ -32,7 +33,7 @@ export async function getStaticProps(req,res) {
     .toArray();
   return {
     props: {
-      question: JSON.parse(JSON.stringify(question)),
-    },
+      question: JSON.parse(JSON.stringify()),
+    }, 
   };
 }
