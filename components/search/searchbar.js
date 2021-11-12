@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { getMongodbQuestion } from "../../lib/api/mongodb.js";
 // import question from "../question.js";
+import Data from "../data.js"
 
 const SearchBar = () => {
    const [question, setquestion] = useState();
@@ -22,7 +23,7 @@ const SearchBar = () => {
           <button
             className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => {
-              question === "sam" ? getMongodbQuestion : null;
+              Data.question.includes(question)  ? alert("data") : null;
             }}
           >
             icon
