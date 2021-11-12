@@ -3,17 +3,23 @@ import SearchBar from "../components/search/searchbar.js";
 import AnswerIcon from "../components/answersheet/answericon.js";
 import Explain from "../components/explain.js"
 import HelpIcon from "../components/helpicon.js";
-import { connectToDatabase } from "../util/mongodb";
+import { connectToDatabase } from "./api/mongodb.js";
 
 export default function Home({}) {
   return (
     <div>
-      <Head></Head>        
+      <Head></Head>
 
       <SearchBar></SearchBar>
       <Explain></Explain>
-     
-        <HelpIcon></HelpIcon><AnswerIcon></AnswerIcon>
+      {question.map((movie) => (
+        <li>
+          <h2>{question.question}</h2>
+          <h3>{movie.answer}</h3>
+        </li>
+      ))}
+      <HelpIcon></HelpIcon>
+      <AnswerIcon></AnswerIcon>
     </div>
   );
 }
@@ -21,15 +27,13 @@ export default function Home({}) {
 
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
-  const movies = await db
-    .collection("movies")
+  const question = await db
+    .collection("question")
     .find({})
-    .sort({ metacritic: -1 })
-    .limit(1000)
     .toArray();
   return {
     props: {
-      movies: JSON.parse(JSON.stringify(movies)),
+      movies: JSON.parse(JSON.stringify(question)),
     },
   };
 }
