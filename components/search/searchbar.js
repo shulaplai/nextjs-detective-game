@@ -5,14 +5,13 @@ import { QuestionData } from "../data.js";
 
 const SearchBar = () => {
   const [questions, setquestions] = useState();
-  const [explain, setexplain]   = useState(false);
+  const [explain, setexplain] = useState(false);
   const onChangeHandler = (event) => {
     setquestions(event.target.value);
   };
   const onChangeHandler2 = () => {
     setexplain(true);
   };
- 
 
   return (
     <div className=" pt-40 p-20	">
@@ -43,13 +42,10 @@ const SearchBar = () => {
         {explain ? (
           <h1>
             {QuestionData.forEach((item, index) => {
-              
-              let id = QuestionData.findIndex((x) => x.request === questions);
-              return(
-                QuestionData.id.answer
-              )
-
+              let id = QuestionData.findIndex((e) => e.request === questions);
+              return console.log(QuestionData[id]) 
             })}
+            aa
           </h1>
         ) : null}
       </div>
