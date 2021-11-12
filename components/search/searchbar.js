@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getMongodbQuestion } from "../../pages/api/mongodb.js";
+// import { getMongodbQuestion } from "../../lib/api/mongodb.js";
 // import question from "../question.js";
 
 const SearchBar = () => {

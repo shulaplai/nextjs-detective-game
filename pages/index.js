@@ -1,21 +1,21 @@
 import Head from "next/head";
 import SearchBar from "../components/search/searchbar.js";
 import AnswerIcon from "../components/answersheet/answericon.js";
-import Explain from "../components/explain.js"
+import Explain from "../components/explain.js";
 import HelpIcon from "../components/helpicon.js";
-import { connectToDatabase } from "./api/mongodb.js";
+// import { getdata } from "../lib/getdata.js";
+import { connectToDatabase } from "../lib/api/mongodb.js";
 
-export default function Home({}) {
+export default function Home({ question }) {
   return (
     <div>
       <Head></Head>
-
       <SearchBar></SearchBar>
       <Explain></Explain>
-      {question.map((movie) => (
+      {question.map((question) => (
         <li>
-          <h2>{question.question}</h2>
-          <h3>{movie.answer}</h3>
+          <h2>{question.question}dsdfdsfdsf</h2>
+          <h3>{question.answer}fsfesfesfes</h3>
         </li>
       ))}
       <HelpIcon></HelpIcon>
@@ -24,8 +24,7 @@ export default function Home({}) {
   );
 }
 
-
-export async function getStaticProps() {
+export async function getStaticProps(req,res) {
   const { db } = await connectToDatabase();
   const question = await db
     .collection("question")
@@ -33,7 +32,7 @@ export async function getStaticProps() {
     .toArray();
   return {
     props: {
-      movies: JSON.parse(JSON.stringify(question)),
+      question: JSON.parse(JSON.stringify(question)),
     },
   };
 }
