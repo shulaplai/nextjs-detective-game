@@ -1,28 +1,28 @@
 import React from "react";
 
-export const Data= [
+export const QuestionData= [
   {
-    question: "who are you?",
+    request: "who are you?",
     answer: "john smith",
   },
   {
-    question: "a",
+    request: "a",
     answer: "john smith",
   },
   {
-    question: "who are you",
+    request: "who are you",
     answer: "john smith",
   },
   {
-    question: "who are you",
+    request: "who are you",
     answer: "john smith",
   },
   {
-    question: "who are you",
+    request: "who are you",
     answer: "john smith",
   },
   {
-    question: "who are you",
+    request: "who are you",
     answer: "john smith",
   }
 ];
