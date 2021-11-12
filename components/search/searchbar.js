@@ -43,7 +43,7 @@ const SearchBar = () => {
           <h1>
             {QuestionData.forEach((item, index) => {
               let id = QuestionData.findIndex((e) => e.request === questions);
-              return console.log(QuestionData[id]) 
+                QuestionData[id]
             })}
             aa
           </h1>

@@ -10,19 +10,19 @@ export const QuestionData= [
     answer: "john smith",
   },
   {
-    request: "who are you",
+    request: "where are you",
     answer: "john smith",
   },
   {
-    request: "who are you",
+    request: "what are you",
     answer: "john smith",
   },
   {
-    request: "who are you",
+    request: "How are you",
     answer: "john smith",
   },
   {
-    request: "who are you",
+    request: "why do you",
     answer: "john smith",
   }
 ];
