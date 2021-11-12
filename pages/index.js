@@ -1,6 +1,6 @@
 import Head from "next/head";
-import SearchBar from "../components/searchbar.js";
-import AnswerIcon from "../components/answericon.js";
+import SearchBar from "../components/search/searchbar.js";
+import AnswerIcon from "../components/answersheet/answericon.js";
 import Explain from "../components/explain.js"
 import HelpIcon from "../components/helpicon.js";
 

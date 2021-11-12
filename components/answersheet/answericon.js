@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineBook } from "react-icons/ai";
 import AnswerSheet from "./answersheet.js"
-import AnswerData from "./answerdata.js";
 
 
 const AnswerIcon = () => {
@@ -41,13 +40,7 @@ const AnswerIcon = () => {
                   >
                     Close
                   </button>
-                  <button
-                    className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Submit
-                  </button> 
+                 
                </div>
               </div>
             </div>

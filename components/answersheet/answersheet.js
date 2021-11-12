@@ -1,7 +1,6 @@
-import AnswerData from "./answerdata.js";
 import React, { useEffect, useState } from "react";
-import { TiTickOutline } from "react-icons/ti";
-import { useForm } from "react-hook-form";
+// import { TiTickOutline } from "react-icons/ti";
+// import { useForm } from "react-hook-form";
 //problem state cannot be mapped, the sheet shared one state. 
 // if cannot be solved , give up on map function
 const AnswerSheet = () => {
