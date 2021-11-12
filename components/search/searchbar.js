@@ -5,9 +5,15 @@ import { QuestionData } from "../data.js";
 
 const SearchBar = () => {
   const [questions, setquestions] = useState();
+  const [explain, setexplain]   = useState(false);
   const onChangeHandler = (event) => {
     setquestions(event.target.value);
   };
+  const onChangeHandler2 = () => {
+    setexplain(true);
+  };
+ 
+
   return (
     <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
@@ -19,26 +25,33 @@ const SearchBar = () => {
           value={questions}
           onChange={onChangeHandler}
         />
-        {QuestionData.map((item, index) => {
-          return (
-            <li key={index}>
-              <a>
-                <span>{item.request}</span>
-              </a>
-            </li>
-          );
-        })}
+
         <div className="p-4">
           <button
             className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => {
-               (QuestionData.filter((e) => e.request === questions).length > 0)
-                 ? alert("data") : null;
+              QuestionData.filter((e) => e.request === questions).length > 0
+                ? onChangeHandler2()
+                : null;
             }}
           >
             icon
           </button>
         </div>
+      </div>
+      <div className="box-border h-32 w-scree mx-20 p-20 border-4 ">
+        {explain ? (
+          <h1>
+            {QuestionData.forEach((item, index) => {
+              
+              let id = QuestionData.findIndex((x) => x.request === questions);
+              return(
+                QuestionData.id.answer
+              )
+
+            })}
+          </h1>
+        ) : null}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export default function Home({ }) {
     <div>
       <Head></Head>
       <SearchBar></SearchBar>
-      <Explain></Explain>
+     
     
       <HelpIcon></HelpIcon>
       <AnswerIcon></AnswerIcon>
