@@ -14,13 +14,30 @@ const SearchBar = () => {
     setexplain(true);
   };
   const [suggestions, setSuggestions] = React.useState([]);
+  const suggestion = [
+    {
+      text: "Apple",
+    },
+    {
+      text: "Banana",
+    },
+    {
+      text: "Cherry",
+    },
+    {
+      text: "Grapefruit",
+    },
+    {
+      text: "Lemon",
+    },
+  ];
   return (
     <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
-        <div className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none">
+        <div >
           <label>Country</label>
           <Autosuggest
-            onSuggestionsFetchRequested={async ({ value }) => {
+            onSuggestionsFetchRequested={async ({ value, }) => {
               if (!value) {
                 setSuggestions([]);
                 return;
@@ -58,6 +75,9 @@ const SearchBar = () => {
               suggestions: { suggestions },
               autoComplete: "abcd",
               placeholder: "who are you",
+                className:"rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none",
+          id:"search",
+          type:"text"
             }}
           />
         </div>
