@@ -18,8 +18,8 @@ const SearchBar = () => {
     <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
         <div className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none">
+          <label>Country</label>
           <Autosuggest
-            
             onSuggestionsFetchRequested={async ({ value }) => {
               if (!value) {
                 setSuggestions([]);
@@ -27,9 +27,7 @@ const SearchBar = () => {
               }
 
               try {
-                const response = await QuestionData.get(
-                  `${value}`
-                );
+                const response = await QuestionData.get(`${value}`);
 
                 setSuggestions(
                   response.data.map((row) => ({
@@ -44,12 +42,7 @@ const SearchBar = () => {
               setSuggestions([]);
             }}
             getSuggestionValue={(suggestion) => suggestion.name}
-            renderSuggestion={(suggestion) => (
-              <div>
-               
-                {suggestion.request}
-              </div>
-            )}
+            renderSuggestion={(suggestion) => <div>{suggestion.request}</div>}
             onSuggestionSelected={(event, { suggestion, method }) => {
               if (method === "enter") {
                 event.preventDefault();
@@ -58,13 +51,13 @@ const SearchBar = () => {
               setFieldValue("country", suggestion.name);
             }}
             inputProps={{
-              placeholder="who are you",
-            value={questions},
-            onChange={onChangeHandler},
-            suggestions={suggestions},
+              value: questions,
+              onChange: (_event, { newValue }) => {
+                setquestion(newValue);
+              },
+              suggestions: { suggestions },
               autoComplete: "abcd",
-         
-              
+              placeholder: "who are you",
             }}
           />
         </div>
