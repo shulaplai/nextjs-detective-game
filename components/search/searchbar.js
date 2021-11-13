@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { QuestionData } from "../data.js";
 
 const SearchBar = () => {
-  const [questions, setquestions] = useState();
+  const [questions, setquestions] = useState("");
   const [explain, setexplain] = useState(false);
   const onChangeHandler = (event) => {
     setquestions(event.target.value);
@@ -43,7 +43,9 @@ const SearchBar = () => {
           <h1>
             {QuestionData.forEach((item, index) => {
               let id = QuestionData.findIndex((e) => e.request === questions);
-                QuestionData[id]
+              const Explaination = QuestionData[id]["answer"];
+              return  (Explaination)          
+
             })}
             aa
           </h1>
