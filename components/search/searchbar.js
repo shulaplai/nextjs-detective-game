@@ -44,8 +44,7 @@ const SearchBar = () => {
             {QuestionData.forEach((item, index) => {
               let id = QuestionData.findIndex((e) => e.request === questions);
               const Explaination = QuestionData[id]["answer"];
-              return  (Explaination)          
-
+              return Explaination;
             })}
             aa
           </h1>
