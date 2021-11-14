@@ -5,48 +5,22 @@ import { QuestionData } from "../data.js";
 import Autosuggest from "react-autosuggest";
 
 const SearchBar = () => {
-  const QuestionDataRequest = [
-    {
-      request: "who are you?",
-      answer: "john smith",
-    },
-  ];
-const suggestions = [
-  {
-    text: "Apple",
-  },
-  {
-    text: "Banana",
-  },
-  {
-    text: "Cherry",
-  },
-  {
-    text: "Grapefruit",
-  },
-  {
-    text: "Lemon",
-  },
-];
+  const suggestions = QuestionData;
+
   const [questions, setquestions] = useState("");
   const [explain, setexplain] = useState(false);
-  const onChangeHandler = (event) => {
-    setquestions(event.target.value);
-  };
+  
+ 
   const onChangeHandler2 = () => {
     setexplain(true);
   };
   const [suggestion, setSuggestion] = useState([]);
-  const filterItems = (arr, query) => {
-    return arr.filter(
-      (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-    );
-  };
+
   const getSuggestions = (v) => {
-   
-       QuestionDataRequest.filter(
-          (v) => v.request
-        );
+    if (v === "") {
+      return [];
+    }
+    return QuestionData.filter((v) => v.request === questions);
   };
   return (
     <div className=" pt-40 p-20	">
@@ -54,8 +28,10 @@ const suggestions = [
         <div>
           <label>Detective Game</label>
           <Autosuggest
-            onSuggestionsFetchRequested={() => {
-              suggestion = getSuggestions();
+            onSuggestionsFetchRequested={(value) => {
+              setSuggestion({
+                suggestions: getSuggestions(value),
+              });
             }}
             onSuggestionsClearRequested={() => {
               setSuggestion([]);
@@ -65,7 +41,9 @@ const suggestions = [
             renderSuggestion={(suggestion) => <div>{suggestion.request}</div>}
             inputProps={{
               value: questions,
-              onChange:  onChangeHandler ,
+              onChange = (event, { newValue }) => {
+    setquestions( newValue);
+  },
               suggestions: { suggestion },
               autoComplete: "abcd",
               placeholder: "who are you",
