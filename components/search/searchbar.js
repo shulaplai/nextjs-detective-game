@@ -5,6 +5,7 @@ import { QuestionData } from "../data.js";
 // import Autosuggest from "react-autosuggest";
 
 const SearchBar = () => {
+
   const [questions, setquestions] = useState("");
   const [explain, setexplain] = useState(false);
 
@@ -13,60 +14,17 @@ const SearchBar = () => {
     const onChangeHandler2 = () => {
       setexplain(true);
     };
-    const [searchtext, setSearchtext] = useState("");
-    const [suggest, setSuggest] = useState([]);
-    const [resfound, setResfound] = useState(true);
-    const handleChange = (e) => {
-      let searchval = e.target.value;
-      let suggestion = [];
-      if (searchval.length > 0) {
-        suggestion = lang
-          .sort()
-          .filter((e) => e.toLowerCase().includes(searchval.toLowerCase()));
-        setResfound(suggestion.length !== 0 ? true : false);
-      }
-      setSuggest(suggestion);
-      setSearchtext(searchval);
-    };
-
-    const suggestedText = (value) => {
-      console.log(value);
-      setSearchtext(value);
-      setSuggest([]);
-    };
-
-    const getSuggestions = () => {
-      if (suggest.length === 0 && searchtext !== "" && !resfound) {
-        return <p>Search Content Not Found</p>;
-      }
-
-      return (
+    return (
         <div className=" pt-40 p-20	">
           <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
             <div className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none">
               <label>Detective Game</label>
 
-              <ul>
-                {suggest.map((item, index) => {
-                  return (
-                    <div key={index}>
-                      <li onClick={() => suggestedText(item)}>{item}</li>
-                      {index !== suggest.length - 1 && <hr />}
-                    </div>
-                  );
-                })}
-              </ul>
-
-              <div>
-                <input
-                  type="text"
-                  placeholder="Search.."
-                  className="search"
-                  value={searchtext}
-                  onChange={handleChange}
-                />
-                {getSuggestions()}
-              </div>
+             
+                value={questions}
+                onChange={onChangeHandler}
+                onSelect={(val) => (value = val)}
+              
 
               <div className="p-4">
                 <button
@@ -101,5 +59,5 @@ const SearchBar = () => {
       );
     };
   };
-};
+
 export default SearchBar;

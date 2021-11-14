@@ -10,7 +10,7 @@ export default function Home({ }) {
   return (
     <div>
       <Head></Head>
-      <SearchBar/>
+      <SearchBar></SearchBar>
 
       <HelpIcon></HelpIcon>
       <AnswerIcon></AnswerIcon>
