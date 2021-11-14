@@ -5,14 +5,29 @@ import { QuestionData } from "../data.js";
 import Autosuggest from "react-autosuggest";
 
 const SearchBar = () => {
-  const QuestionDataRequest =
-    ("who are you?",
-    "a",
-    "where are you",
-    "what are you",
-    "How are you",
-    "why do you");
-
+  const QuestionDataRequest = [
+    {
+      request: "who are you?",
+      answer: "john smith",
+    },
+  ];
+const suggestions = [
+  {
+    text: "Apple",
+  },
+  {
+    text: "Banana",
+  },
+  {
+    text: "Cherry",
+  },
+  {
+    text: "Grapefruit",
+  },
+  {
+    text: "Lemon",
+  },
+];
   const [questions, setquestions] = useState("");
   const [explain, setexplain] = useState(false);
   const onChangeHandler = (event) => {
@@ -21,11 +36,17 @@ const SearchBar = () => {
   const onChangeHandler2 = () => {
     setexplain(true);
   };
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestion, setSuggestion] = useState([]);
   const filterItems = (arr, query) => {
     return arr.filter(
       (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1
     );
+  };
+  const getSuggestions = (v) => {
+   
+       QuestionDataRequest.filter(
+          (v) => v.request
+        );
   };
   return (
     <div className=" pt-40 p-20	">
@@ -33,27 +54,19 @@ const SearchBar = () => {
         <div>
           <label>Detective Game</label>
           <Autosuggest
-            onSuggestionsFetchRequested={async ({ value }) => {
-              if (!value) {
-                setSuggestions([]);
-                return;
-              }
-
-              try {
-                setSuggestions([await filterItems(QuestionDataRequest, value)]);
-              } catch (e) {
-                setSuggestions([]);
-              }
+            onSuggestionsFetchRequested={() => {
+              suggestion = getSuggestions();
             }}
             onSuggestionsClearRequested={() => {
-              setSuggestions([]);
+              setSuggestion([]);
             }}
-            getSuggestionValue={(suggestions) => suggestions}
-            renderSuggestion={(suggestions) => <div>{suggestions}</div>}
+            suggestions={suggestions}
+            getSuggestionValue={(suggestion) => suggestion.request}
+            renderSuggestion={(suggestion) => <div>{suggestion.request}</div>}
             inputProps={{
               value: questions,
-              onChange: onChangeHandler,
-              suggestions: { suggestions },
+              onChange:  onChangeHandler ,
+              suggestions: { suggestion },
               autoComplete: "abcd",
               placeholder: "who are you",
               className:
