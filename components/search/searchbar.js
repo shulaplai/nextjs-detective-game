@@ -21,7 +21,7 @@ const SearchBar = () => {
   //       const Explaination = questionReqest[id]["answer"];return Explaination
   //   }, [explain]);
   // });
- 
+
   const questionReqest = [
     {
       request: "who are you?",
@@ -104,18 +104,18 @@ const SearchBar = () => {
       </div>
       <div className="box-border h-32 w-scree mx-20 p-20 border-4 ">
         {explain ? (
-          <h1>
+          <div>
             {questionReqest.forEach((item, index) => {
               let id = questionReqest.findIndex(
                 (e) => e.request === inputValue
               );
-              let  detail = questionReqest[id]["answer"];
+              let detail = questionReqest[id]["answer"];
 
               console.log(detail);
               return detail;
             })}
-            aaa
-          </h1>
+            a
+          </div>
         ) : null}
       </div>
     </div>
