@@ -30,7 +30,7 @@ const SearchBar = () => {
     {
       request: "a",
       answer:
-        "john smith dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
+        "dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
     },
     {
       request: "where are you",
@@ -106,10 +106,10 @@ const SearchBar = () => {
         {explain ? (
           <div>
             {questionReqest.forEach((item, index) => {
-              let id = questionReqest.findIndex(
+              let id =  questionReqest.findIndex(
                 (e) => e.request === inputValue
               );
-              let detail = questionReqest[id]["answer"];
+              let detail =  questionReqest[id]["answer"];
 
               console.log(detail);
               return detail;
