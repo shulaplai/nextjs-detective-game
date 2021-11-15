@@ -21,7 +21,13 @@ const SearchBar = () => {
   //       const Explaination = questionReqest[id]["answer"];return Explaination
   //   }, [explain]);
   // });
-
+  function GetData() {
+    for (let i = 0; i < questionReqest.length; i++) {
+      if (questionReqest[i].request === inputValue) {
+        return questionReqest[i].answer;
+      }
+    }
+  }
   const questionReqest = [
     {
       request: "who are you?",
@@ -29,8 +35,7 @@ const SearchBar = () => {
     },
     {
       request: "a",
-      answer:
-        "dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
+      answer: "dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
     },
     {
       request: "where are you",
@@ -105,16 +110,8 @@ const SearchBar = () => {
       <div className="box-border h-32 w-scree mx-20 p-20 border-4 ">
         {explain ? (
           <div>
-            {questionReqest.forEach((item, index) => {
-              let id =  questionReqest.findIndex(
-                (e) => e.request === inputValue
-              );
-              let detail =  questionReqest[id]["answer"];
-
-              console.log(detail);
-              return detail;
-            })}
-            a
+            <GetData></GetData>
+            <Test></Test>
           </div>
         ) : null}
       </div>
@@ -122,3 +119,7 @@ const SearchBar = () => {
   );
 };
 export default SearchBar;
+
+function Test() {
+  return <div>data</div>;
+}
