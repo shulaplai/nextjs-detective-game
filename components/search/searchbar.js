@@ -10,7 +10,7 @@ import match from "autosuggest-highlight/match";
 const SearchBar = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [explain, setExplain] = useState(false);
-  const [detail, setDetail] = React.useState("");
+  // const [detail, setDetail] = React.useState("");
 
   const onChangeHandler2 = () => {
     setExplain(true);
@@ -21,7 +21,7 @@ const SearchBar = () => {
   //       const Explaination = questionReqest[id]["answer"];return Explaination
   //   }, [explain]);
   // });
-
+ 
   const questionReqest = [
     {
       request: "who are you?",
@@ -109,13 +109,12 @@ const SearchBar = () => {
               let id = questionReqest.findIndex(
                 (e) => e.request === inputValue
               );
-              detail = questionReqest[id]["answer"];
+              let  detail = questionReqest[id]["answer"];
 
-          
-              ;console.log(detail);
-              return detail();
-;
-            })}aaa
+              console.log(detail);
+              return detail;
+            })}
+            aaa
           </h1>
         ) : null}
       </div>
