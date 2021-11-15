@@ -15,13 +15,31 @@ const SearchBar = () => {
     setExplain(true);
   };
   const top100Films = [
-    { title: "The Shawshank Redemption", year: 1994 },
-    { title: "The Godfather", year: 1972 },
-    { title: "The Godfather: Part II", year: 1974 },
-    { title: "The Dark Knight", year: 2008 },
-    { title: "12 Angry Men", year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: "Pulp Fiction", year: 1994 },
+    {
+      request: "who are you?",
+      answer: "john smith",
+    },
+    {
+      request: "a",
+      answer:
+        "john smith dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
+    },
+    {
+      request: "where are you",
+      answer: "john smith",
+    },
+    {
+      request: "what are you",
+      answer: "john smith",
+    },
+    {
+      request: "How are you",
+      answer: "john smith",
+    },
+    {
+      request: "why do you",
+      answer: "john smith",
+    },
   ];
   return (
     <div className=" pt-40 p-20	">
@@ -35,13 +53,13 @@ const SearchBar = () => {
             setInputValue(newInputValue);
           }}
           options={top100Films}
-          getOptionLabel={(option) => option.title}
+          getOptionLabel={(option) => option.request}
           renderInput={(params) => (
             <TextField {...params} label="Highlights" margin="normal" />
           )}
           renderOption={(props, option, { inputValue }) => {
-            const matches = match(option.title, inputValue);
-            const parts = parse(option.title, matches);
+            const matches = match(option.request, inputValue);
+            const parts = parse(option.request, matches);
 
             return (
               <li {...props}>
