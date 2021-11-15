@@ -8,13 +8,21 @@ import Autocomplete from "@mui/material/Autocomplete";
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
 const SearchBar = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = React.useState("");
   const [explain, setExplain] = useState(false);
+  const [detail, setDetail] = React.useState("");
 
   const onChangeHandler2 = () => {
     setExplain(true);
   };
-  const top100Films = [
+  // useEffect(() => {
+  //   questionReqest.forEach((item, index) => {
+  //     let id = questionReqest.findIndex((e) => e.request === inputValue);
+  //       const Explaination = questionReqest[id]["answer"];return Explaination
+  //   }, [explain]);
+  // });
+
+  const questionReqest = [
     {
       request: "who are you?",
       answer: "john smith",
@@ -46,13 +54,14 @@ const SearchBar = () => {
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
         <Autocomplete
           id="highlights-demo"
+          isOptionEqualToValue={(option, value) => option.id === value.id}
           className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none"
           sx={{ width: 300 }}
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
             setInputValue(newInputValue);
           }}
-          options={top100Films}
+          options={questionReqest}
           getOptionLabel={(option) => option.request}
           renderInput={(params) => (
             <TextField {...params} label="Highlights" margin="normal" />
@@ -84,7 +93,7 @@ const SearchBar = () => {
           <button
             className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => {
-              QuestionData.filter((e) => e.request === inputValue).length > 0
+              questionReqest.filter((e) => e.request === inputValue).length > 0
                 ? onChangeHandler2()
                 : null;
             }}
@@ -96,12 +105,17 @@ const SearchBar = () => {
       <div className="box-border h-32 w-scree mx-20 p-20 border-4 ">
         {explain ? (
           <h1>
-            {QuestionData.forEach((item, index) => {
-              let id = QuestionData.findIndex((e) => e.request === inputValue);
-              const Explaination = QuestionData[id]["answer"];
-              return Explaination;
-            })}
-            aa
+            {questionReqest.forEach((item, index) => {
+              let id = questionReqest.findIndex(
+                (e) => e.request === inputValue
+              );
+              detail = questionReqest[id]["answer"];
+
+          
+              ;console.log(detail);
+              return detail();
+;
+            })}aaa
           </h1>
         ) : null}
       </div>
