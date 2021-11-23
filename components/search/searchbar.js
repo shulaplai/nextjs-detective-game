@@ -40,7 +40,7 @@ const SearchBar = () => {
         <Autocomplete
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
-          className="rounded-l-full w-full  px-6 text-gray-700 leading-tight focus:outline-none"
+          className="rounded-l-full w-60	  px-6 text-gray-700 leading-tight focus:outline-none"
           sx={{ width: 300 }}
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
