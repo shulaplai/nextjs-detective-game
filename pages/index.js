@@ -11,8 +11,8 @@ export default function Home({ }) {
   return (
     <div>
       <Head>
-        <title>My page title</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <title> 偵探游戲</title>
+      
       </Head>
       <Header></Header>
       <SearchBar></SearchBar>
