@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
-;
 import { AiOutlineSearch } from "react-icons/ai";
 
 const SearchBar = () => {
@@ -26,12 +25,15 @@ const SearchBar = () => {
   // });
   function GetData() {
     for (let i = 0; i < QuestionData.length; i++) {
+      if (!inputValue ) {
+        return null;
+      }
       if (QuestionData[i].request === inputValue) {
         return QuestionData[i].answer;
       }
     }
   }
- 
+
   return (
     <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
@@ -88,7 +90,7 @@ const SearchBar = () => {
       <div className="	flex  justify-center items-center">
         <div className="box-border h-full w-screen mt-20 mx-12 p-28 border-4 ">
           {explain ? (
-            <div>
+            <div className="text-justify font-semibold	tracking-wide	leading-relaxed	">
               <GetData></GetData>
             </div>
           ) : null}
