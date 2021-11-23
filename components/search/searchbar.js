@@ -25,7 +25,7 @@ const SearchBar = () => {
   // });
   function GetData() {
     for (let i = 0; i < QuestionData.length; i++) {
-      if (!inputValue ) {
+      if (!inputValue) {
         return null;
       }
       if (QuestionData[i].request === inputValue) {
@@ -41,7 +41,6 @@ const SearchBar = () => {
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
           className="rounded-full w-full	px-6  text-gray-700  focus:outline-none"
-          
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
             setInputValue(newInputValue);
