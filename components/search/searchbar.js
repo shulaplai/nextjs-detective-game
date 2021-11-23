@@ -7,6 +7,9 @@ import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
+;
+import { AiOutlineSearch } from "react-icons/ai";
+
 const SearchBar = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [explain, setExplain] = useState(false);
@@ -16,44 +19,19 @@ const SearchBar = () => {
     setExplain(true);
   };
   // useEffect(() => {
-  //   questionReqest.forEach((item, index) => {
-  //     let id = questionReqest.findIndex((e) => e.request === inputValue);
-  //       const Explaination = questionReqest[id]["answer"];return Explaination
+  //   QuestionData.forEach((item, index) => {
+  //     let id = QuestionData.findIndex((e) => e.request === inputValue);
+  //       const Explaination = QuestionData[id]["answer"];return Explaination
   //   }, [explain]);
   // });
   function GetData() {
-    for (let i = 0; i < questionReqest.length; i++) {
-      if (questionReqest[i].request === inputValue) {
-        return questionReqest[i].answer;
+    for (let i = 0; i < QuestionData.length; i++) {
+      if (QuestionData[i].request === inputValue) {
+        return QuestionData[i].answer;
       }
     }
   }
-  const questionReqest = [
-    {
-      request: "who are you?",
-      answer: "john smith",
-    },
-    {
-      request: "a",
-      answer: "dfeergergtrtrgtrrtgtrgtrgrtgtrgrtgtrgtrtgrtgrtgrgtdvfgnuuijui",
-    },
-    {
-      request: "where are you",
-      answer: "john smith",
-    },
-    {
-      request: "what are you",
-      answer: "john smith",
-    },
-    {
-      request: "How are you",
-      answer: "john smith",
-    },
-    {
-      request: "why do you",
-      answer: "john smith",
-    },
-  ];
+ 
   return (
     <div className=" pt-40 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
@@ -66,10 +44,10 @@ const SearchBar = () => {
           onInputChange={(event, newInputValue) => {
             setInputValue(newInputValue);
           }}
-          options={questionReqest}
+          options={QuestionData}
           getOptionLabel={(option) => option.request}
           renderInput={(params) => (
-            <TextField {...params} label="Highlights" margin="normal" />
+            <TextField {...params} label="Question" margin="normal" />
           )}
           renderOption={(props, option, { inputValue }) => {
             const matches = match(option.request, inputValue);
@@ -98,28 +76,25 @@ const SearchBar = () => {
           <button
             className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => {
-              questionReqest.filter((e) => e.request === inputValue).length > 0
+              QuestionData.filter((e) => e.request === inputValue).length > 0
                 ? onChangeHandler2()
                 : null;
             }}
           >
-            icon
+            <AiOutlineSearch />
           </button>
         </div>
       </div>
-      <div className="box-border h-32 w-scree mx-20 p-20 border-4 ">
-        {explain ? (
-          <div>
-            <GetData></GetData>
-            <Test></Test>
-          </div>
-        ) : null}
+      <div className="	flex  justify-center items-center">
+        <div className="box-border h-full w-screen mt-20 mx-12 p-28 border-4 ">
+          {explain ? (
+            <div>
+              <GetData></GetData>
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   );
 };
 export default SearchBar;
-
-function Test() {
-  return <div>data</div>;
-}
