@@ -36,7 +36,7 @@ const SearchBar = () => {
 
   return (
     <div className=" pt-20 p-20	">
-      <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
+      <div className="bg-white w-full flex items-center justify-self-center rounded-full shadow-xl">
         <Autocomplete
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
