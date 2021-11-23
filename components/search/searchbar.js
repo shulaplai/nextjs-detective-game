@@ -35,7 +35,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className=" pt-40 p-20	">
+    <div className=" pt-20 p-20	">
       <div className="bg-white flex items-center justify-self-center rounded-full shadow-xl">
         <Autocomplete
           id="highlights-demo"
