@@ -41,7 +41,7 @@ const SearchBar = () => {
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
           className="rounded-full w-full	px-6  text-gray-700  focus:outline-none"
-          sx={{ width: 300 }}
+          
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
             setInputValue(newInputValue);
