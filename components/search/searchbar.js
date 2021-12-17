@@ -29,6 +29,8 @@ const SearchBar = () => {
         return null;
       }
       if (QuestionData[i].request === inputValue) {
+        let answer = ``
+        answer=QuestionData[i].answer
         return QuestionData[i].answer;
       }
     }
@@ -40,7 +42,7 @@ const SearchBar = () => {
         <Autocomplete
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
-          className="rounded-full w-full	px-6  text-gray-700  focus:outline-none"
+          className="rounded-full w-full	px-6  text-white  focus:outline-none"
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
             setInputValue(newInputValue);
@@ -86,10 +88,11 @@ const SearchBar = () => {
           </button>
         </div>
       </div>
+      <div className="	flex  mt-8 mx-12 ">SearchData</div>
       <div className="	flex  justify-center items-center">
-        <div className="box-border h-full w-screen mt-20 mx-12 p-28 border-4 ">
+        <div className="box-border border-slate-500	 h-full w-screen mt-20 mx-12 p-28 border-4 ">
           {explain ? (
-            <div className="text-justify font-semibold	tracking-wide	leading-relaxed	">
+            <div className="text-black text-justify font-semi bold	tracking-wide	leading-relaxed	">
               <GetData></GetData>
             </div>
           ) : null}

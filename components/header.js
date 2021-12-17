@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 
 const Header = () => {
   return (
-    <div>
-      <div className="flex mt-16	 justify-center items-center">
-        <div className="text-gray-800 font-semi bold text-4xl	">
-          你好 偵探 
-        </div>
+    <div className="bg-slate-400">
+      <div className="bg-slate-400 flex	 justify-center items-center">
+        <div className="text-gray-800 font-semi bold text-4xl	">你好 偵探</div>
         <br />
       </div>{" "}
       <div className="flex mt-16	 justify-center items-center">
