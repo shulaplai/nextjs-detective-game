@@ -17,6 +17,10 @@ const SearchBar = () => {
   const onChangeHandler2 = () => {
     setExplain(true);
   };
+  const Test= `gggg
+  ddd
+  ddd
+  d`
   // useEffect(() => {
   //   QuestionData.forEach((item, index) => {
   //     let id = QuestionData.findIndex((e) => e.request === inputValue);
@@ -31,6 +35,7 @@ const SearchBar = () => {
       if (QuestionData[i].request === inputValue) {
         let answer = ``
         answer=QuestionData[i].answer
+        console.log(answer)
         return QuestionData[i].answer;
       }
     }
@@ -88,11 +93,11 @@ const SearchBar = () => {
           </button>
         </div>
       </div>
-      <div className="	flex  mt-8 mx-12 ">SearchData</div>
-      <div className="	flex  justify-center items-center">
-        <div className="box-border border-slate-500	 h-full w-screen mt-20 mx-12 p-28 border-4 ">
+      {/* <div className="	flex  mt-8 mx-12 ">SearchData{Test}</div> */}
+      <div className="	flex  ">
+        <div className="box-border border-slate-500	 h-full w-screen mt-20 mx-12 p-20 border-4 ">
           {explain ? (
-            <div className="text-black text-justify font-semi bold	tracking-wide	leading-relaxed	">
+            <div className=" h-20	 text-black text-justify font-semi bold	tracking-wide	leading-relaxed	">
               <GetData></GetData>
             </div>
           ) : null}

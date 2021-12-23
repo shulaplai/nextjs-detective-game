@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="bg-slate-400">
-      <div className="bg-slate-400 flex	 justify-center items-center">
-        <div className="text-gray-800 font-semi bold text-4xl	">你好 偵探</div>
-        <br />
-      </div>{" "}
-      <div className="flex mt-16	 justify-center items-center">
-        <p className="text-gray-800 font-semi bold text-3xl	">
-          在下列的資料中找尋線索 以解開案件的真相
-        </p>{" "}
+    <div className=" flex	mt-12 ml-20 justify-center items-center">
+      <div class="basis-1/2">
+        <div className="text-gray-800 font-semi bold text-4xl	">
+          你已登入 偵探xqc
+        </div>
+        <div>您可在此搜查案件編號G134566的資料</div>
+      </div>
+      <div class="basis-1/2">
+        <div className="text-gray-800 font-bold text-5xl	">
+          
+          <Image
+            src="/../public/logo.png"
+            alt="Picture"
+            width={200}
+            height={100}
+          />P.D.A
+        </div>
       </div>
     </div>
   );
