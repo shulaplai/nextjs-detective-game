@@ -8,7 +8,7 @@ import Footer from "../components/footer.js"
 
 export default function Layout({}) {
   return (
-    <div className="container mx-auto	">
+    <div className="	bg-slate-400		">
       <Header></Header>
       <SearchBar></SearchBar>
       {/* <HelpIcon></HelpIcon>

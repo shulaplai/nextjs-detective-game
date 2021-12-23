@@ -9,7 +9,7 @@ import Layout from "../components/layout.js";
 export default function Home({ }) {
 
   return (
-    <div className="">
+    <div className="		">
       <Head>
         <script src="https://cdn.tailwindcss.com"></script>
 

@@ -17,10 +17,10 @@ const SearchBar = () => {
   const onChangeHandler2 = () => {
     setExplain(true);
   };
-  const Test= `gggg
+  const Test = `gggg
   ddd
   ddd
-  d`
+  d`;
   // useEffect(() => {
   //   QuestionData.forEach((item, index) => {
   //     let id = QuestionData.findIndex((e) => e.request === inputValue);
@@ -33,17 +33,17 @@ const SearchBar = () => {
         return null;
       }
       if (QuestionData[i].request === inputValue) {
-        let answer = ``
-        answer=QuestionData[i].answer
-        console.log(answer)
+        let answer = ``;
+        answer = QuestionData[i].answer;
+        console.log(answer);
         return QuestionData[i].answer;
       }
     }
   }
 
   return (
-    <div className=" pt-20 p-20	">
-      <div className="bg-white w-full flex items-center justify-self-center rounded-full shadow-xl">
+    <div className=" bg-white	h-auto	p-28	">
+      <div className="bg-white	 w-full flex items-center justify-self-center shadow-xl">
         <Autocomplete
           id="highlights-demo"
           isOptionEqualToValue={(option, value) => option.id === value.id}
@@ -94,10 +94,10 @@ const SearchBar = () => {
         </div>
       </div>
       {/* <div className="	flex  mt-8 mx-12 ">SearchData{Test}</div> */}
-      <div className="	flex  ">
-        <div className="box-border border-slate-500	 h-full w-screen mt-20 mx-12 p-20 border-4 ">
+      <div className="h-5/6	flex  items-center justify-self-center ">
+        <div className=" box-border border-black h-5/6 w-screen mt-12  p-20 border-4 ">
           {explain ? (
-            <div className=" h-20	 text-black text-justify font-semi bold	tracking-wide	leading-relaxed	">
+            <div className=" 	 text-black text-justify font-semi bold	tracking-wide	leading-relaxed	">
               <GetData></GetData>
             </div>
           ) : null}
