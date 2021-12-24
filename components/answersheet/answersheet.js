@@ -25,7 +25,7 @@ const AnswerSheet = () => {
       <form className="bg-white shadow-md rounded px-36 pt-6 pb-8 	">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Q1 who is the killer ?
+            Q1 遺囑位置 ?
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -39,13 +39,13 @@ const AnswerSheet = () => {
             type="button"
             className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
             onClick={() => {
-              answer === "sam" ? alert("Correct") : alert("Wrong");
+              answer === "前會長的棺材中" ? alert("Correct") : alert("Wrong");
             }}
           >
-            Submit
+            提交
           </button>
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Q2 who is the killer ?
+            Q2 是誰把遺囑弄失蹤的 ?
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -59,13 +59,13 @@ const AnswerSheet = () => {
             type="button"
             className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
             onClick={() => {
-              answer2 === "sam" ? alert("Correct") : alert("Wrong");
+              answer2 === "小兒子" ? alert("Correct") : alert("Wrong");
             }}
           >
-            Submit
+            提交
           </button>
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Q3 who is the killer ?
+            Q3 是誰偷走前會長的屍體 ?
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -79,13 +79,13 @@ const AnswerSheet = () => {
             type="button"
             className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
             onClick={() => {
-              answer3 === "sam" ? alert("Correct") : alert("Wrong");
+              answer3 === "他妻子" ? alert("Correct") : alert("Wrong");
             }}
           >
-            Submit
+            提交
           </button>
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Q4 who is the killer ?
+            Q4 是誰把債券放入棺材中 ?
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -99,13 +99,13 @@ const AnswerSheet = () => {
             type="button"
             className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
             onClick={() => {
-              answer4 === "sam" ? alert("Correct") : alert("Wrong");
+              answer4 === "管理人" ? alert("Correct") : alert("Wrong");
             }}
           >
-            Submit
+            提交
           </button>
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Q5 who is the killer ?
+            Q5 前會長真的是死於自然嗎?如果不是,又是誰殺了前會長? 
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -119,10 +119,10 @@ const AnswerSheet = () => {
             type="button"
             className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6  rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear "
             onClick={() => {
-              answer5 === "sam" ? alert("Correct") : alert("Wrong");
+              answer5 === "我" ? alert("Correct") : alert("Wrong");
             }}
           >
-            Submit
+            提交
           </button>
         </div>
       </form>
